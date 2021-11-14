@@ -2,5 +2,7 @@
 <p>Dostępne itemy: <%= @items.length %> </p>
 
 <% @items.each do |item| %>
-  <p>Item o nazwie: <%= item.name %> </p>
+  <p>
+    Item o nazwie <%= item.name %> <%= link_to "show", item %> 
+ </p>
 <% end %>
