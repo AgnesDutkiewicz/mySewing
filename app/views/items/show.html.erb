@@ -1,5 +1,9 @@
 <h1>Item with name: <%= @item.name %> </h1>
 <p>Available models: <%= @item.item_versions.count %> </p>
+<p> <%= @item.item_versions %> </p>
+ <p>
+    Item name <%= @item.name %> <%= link_to "back", item %> 
+ </p>
 
 <%# TODO: %>
 <%# 

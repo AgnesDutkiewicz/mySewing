@@ -1,8 +1,8 @@
 <h1>Items#index</h1>
-<p>Dostępne itemy: <%= @items.length %> </p>
+<p>Available items: <%= @items.length %> </p>
 
 <% @items.each do |item| %>
   <p>
-    Item o nazwie <%= item.name %> <%= link_to "show", item %> 
+    Item name <%= item.name %> <%= link_to "show", item %> 
  </p>
 <% end %>
