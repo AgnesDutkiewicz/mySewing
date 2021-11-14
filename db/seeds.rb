@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Item.destroy_all == Item.all.destroy_all
+Item.destroy_all
+
+10.times { |index| Item.create(name: "Item with number #{index + 1}") }
