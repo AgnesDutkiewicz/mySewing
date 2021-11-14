@@ -1,1 +1,12 @@
 <h1>Item with name: <%= @item.name %> </h1>
+<p>Available models: <%= @item.item_versions.count %> </p>
+
+<%# TODO: %>
+<%# 
+    1. Add go back button (check documentation) with link to index (check rails routes for proper path)
+    2. Add here a list of all available item versions with size, color and link
+    3. Create Clients table, controller, views with index and show actions
+    4. Create Orders table with two references (both foreign keys) to Client and ItemVersion tables
+    5. Make sure that from a clients list you can go to Client's details, Client's Orders
+    6. On Orders show action use: order.item_verion.item.name to present the actual name of the orderded item :) 
+%>

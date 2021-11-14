@@ -8,5 +8,12 @@
 
 # Item.destroy_all == Item.all.destroy_all
 Item.destroy_all
+ItemVersion.destroy_all
 
-10.times { |index| Item.create(name: "Item with number #{index + 1}") }
+10.times do |index|
+    item = Item.create(name: "Item with number #{index + 1}")
+    ItemVersion.create(item: item, size: 'M', color: 'green')
+    ItemVersion.create(item: item, size: 'L', color: 'green')
+    ItemVersion.create(item: item, size: 'M', color: 'blue')
+    ItemVersion.create(item: item, size: 'L', color: 'blue')
+end

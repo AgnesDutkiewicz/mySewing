@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_14_124047) do
+ActiveRecord::Schema.define(version: 2021_11_14_135921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "item_versions", force: :cascade do |t|
+    t.string "size"
+    t.string "color"
+    t.bigint "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_item_versions_on_item_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -22,4 +31,5 @@ ActiveRecord::Schema.define(version: 2021_11_14_124047) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "item_versions", "items"
 end
