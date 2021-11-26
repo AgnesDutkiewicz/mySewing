@@ -7,17 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Item.destroy_all == Item.all.destroy_all
-Item.destroy_all
 ItemVersion.destroy_all
+Item.destroy_all
 Client.destroy_all
 
 10.times do |index|
     item = Item.create(name: "Item with number #{index + 1}")
-    client = Client.create(name: "Client #{index + 1}")
     ItemVersion.create(item: item, size: 'S', color: 'green')
     ItemVersion.create(item: item, size: 'M', color: 'green')
     ItemVersion.create(item: item, size: 'L', color: 'green')
     ItemVersion.create(item: item, size: 'S', color: 'blue')
     ItemVersion.create(item: item, size: 'M', color: 'blue')
     ItemVersion.create(item: item, size: 'L', color: 'blue')
+
+    client = Client.create(client_name: "Client #{index + 1}")
 end

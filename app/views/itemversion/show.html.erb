@@ -1,2 +1,8 @@
-<h1>Itemversion#show</h1>
-<p>Find me in app/views/itemversion/show.html.erb</p>
+<h1>Item with name <%= @item.name %> versions: </h1>
+<p>Available versions: <%= @item.item_versions.count %> </p>
+
+<%= @item_versions.each do |item_version| %>
+ <p>
+  <%# Item name <%= @item.name <%= link_to "back", item_ %>  %> %>
+ </p>
+<% end %>

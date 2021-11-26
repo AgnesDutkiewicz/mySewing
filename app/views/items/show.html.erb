@@ -1,10 +1,11 @@
 <h1>Item with name: <%= @item.name %> </h1>
 <p>Available models: <%= @item.item_versions.count %> </p>
-<p> <%= @item.item_versions %> </p>
- <p>
-    Item name <%= @item.name %> <%= link_to "back", item %> 
- </p>
 
+<%= @items_version.each do |item_version| %>
+ <p>
+    Item name <%= @item_version.name <%= link_to "back", item_ %>  %>
+ </p>
+<% end %>
 <%# TODO: %>
 <%# 
     1. Add go back button (check documentation) with link to index (check rails routes for proper path)

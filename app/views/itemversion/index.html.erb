@@ -1,8 +1,8 @@
-<h1>Items#index</h1>
-<p>Available versions: <%= @itemsversion.length %> </p>
+<h1>Item_version#index</h1>
+<p>Available versions: <%= @itemversion.count %> </p>
 
-<% @itemsversion.each do |itemversion| %>
+<% @item_versions.each do |itemversion| %>
   <p>
-    Item <%= item.name %> <%= itemversion.color %> <%= itemversion.size %> <%= link_to "show", itemversion %> 
+    Item <%= item.name %> <%= item_version.color %> <%= item_version.size %> <%= link_to "show", item_version %> 
  </p>
 <% end %>
