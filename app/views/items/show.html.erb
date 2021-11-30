@@ -1,13 +1,13 @@
-<h1>Item with name: <%= @item.name %> </h1>
-<p>Available models: <%= @item.item_versions.count %> </p>
+<h1>Item with name: <%= @single_item.name %> </h1>
+<p>Available models: <%= @single_item.item_versions.count %> </p>
 
- <%@item.item_versions.each do |item_versions| %>
-<p>
-<%= @item.name %> size <%= item_versions.size %> color <%= item_versions.color %> <%= link_to "item", itemversions_path %>
-</p>
+<% @single_item.item_versions.each do |item_version| %>
+  <p>
+    <%= @single_item.name %> size <%= item_version.size %> color <%= item_version.color %> <%= link_to "item", item_version %>
+  </p>
 <% end %>
 <p>
-<%= link_to "back", items_path %>
+  <%= link_to "back", items_path %>
 </p>
 
 

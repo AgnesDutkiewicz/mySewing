@@ -1,8 +1,11 @@
-<h1>Item with name <%= @item.name %> versions: </h1>
-<p>Available versions: <%= @item.item_versions.count %> </p>
+<h1>Item with name <%= @item_version.item.name %></h1>
 
-<%= @item_versions.each do |item_version| %>
- <p>
-  <%# Item name <%= @item.name <%= link_to "back", item_ %>  %> %>
- </p>
-<% end %>
+<p>
+  Size: <%= @item_version.size %>
+</p>
+
+<p>
+  Color: <%= @item_version.color %>
+</p>
+
+<%= link_to "Back", @item_version.item %>
