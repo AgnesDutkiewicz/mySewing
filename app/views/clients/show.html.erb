@@ -1,2 +1,9 @@
-<h1>Clients#show</h1>
-<p>Find me in app/views/clients/show.html.erb</p>
+<h1><%= @client.client_name %> </h1>
+
+<p>
+    <%= link_to "Orders", client_orders_path(client_id: @client.id) %>
+</p>
+<p>
+    <%= link_to "Back", clients_path %>
+</p>
+

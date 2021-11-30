@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
   root 'items#index' 
 
-  get 'orders/index'
-  get 'orders/show'
-  get 'items/index'
-  get 'items/show'
-  get 'clients/index'
-  get 'clients/show'
-  resources :clients
-  resources :items
-  resources :item_versions
-  resources :orders
+  resources :items, only: [:index, :show]
+  resources :item_versions, only: [:show]
+
+  resources :clients, only: [:index, :show] do
+    resources :orders, only: [:index, :show]
+  end
 end
