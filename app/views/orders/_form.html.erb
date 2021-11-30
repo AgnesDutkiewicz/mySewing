@@ -1,0 +1,14 @@
+<%= form_with model: order do |form| %>
+  <p>
+    <b>Item Version</b><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%#
+  https://guides.rubyonrails.org/action_controller_overview.html
+  https://guides.rubyonrails.org/form_helpers.html
+%>

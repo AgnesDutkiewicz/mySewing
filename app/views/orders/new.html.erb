@@ -1,0 +1,7 @@
+<H1> New order for: <%= @order.client.client_name %> </H1>
+
+<%#
+ https://guides.rubyonrails.org/action_controller_overview.html 
+%>
+
+<%= render partial: "form", locals: {order: @order} %>

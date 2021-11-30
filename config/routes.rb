@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :item_versions, only: [:show]
 
   resources :clients, only: [:index, :show] do
-    resources :orders, only: [:index, :show]
+    resources :orders, only: [:index, :show, :new]
   end
+
+  resources :orders, only: [:index, :show, :new]
 end

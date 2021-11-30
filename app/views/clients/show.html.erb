@@ -1,6 +1,9 @@
 <h1><%= @client.client_name %> </h1>
 
 <p>
+    <%= link_to "New Order", new_client_order_path(client_id: @client.id) %>
+</p>
+<p>
     <%= link_to "Orders", client_orders_path(client_id: @client.id) %>
 </p>
 <p>

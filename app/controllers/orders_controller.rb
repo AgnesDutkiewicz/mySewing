@@ -6,4 +6,9 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
   end
+
+  def new
+    @client = Client.find(params[:client_id])
+    @order = Order.new(client_id: @client.id)
+  end
 end
