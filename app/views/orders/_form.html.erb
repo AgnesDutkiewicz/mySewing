@@ -1,7 +1,7 @@
-<%= form_with model: order do |form| %>
+<%= form_with model: [:client, order] do |form| %>
   <p>
-    <b>Item Version</b><br>
-    <%= form.text_field :name %>
+    <b>Item Version</b>
+    <%= form.collection_select :item_versions_id, ItemVersion.all, :id, :list_display_name %>
   </p>
   <p>
     <%= form.submit %>
