@@ -2,14 +2,24 @@
 
 <% @orders.each do |order| %>
   <p>
-    Order for item: <%= order.item_versions.list_display_name %> 
+    Order for item: <%= order.item_version.list_display_name %>
+  </p>
+  <p>
+    Created: <%= order.created_at%>
+  </p>
+  <p>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   </p>
 <% end %>
 
+<p>
+<%= link_to "Back", client_path(params[:client_id])%>
+</p>
+
 <%# TODO: %>
 <%# 
-  1. Add go back button
-  2. Add details view
+  1!. Add go back button
+  2!. Add details view
   3. In Order rename column item_versions_id to item_version_id and fix everything.
   4. Go through documentation of Administrate: https://administrate-demo.herokuapp.com/getting_started
   5. Create dashboards for Users and Orders
