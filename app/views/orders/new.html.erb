@@ -5,3 +5,7 @@
 %>
 
 <%= render partial: "form", locals: {order: @order} %>
+
+<p>
+<%= link_to "Back", client_path(params[:client_id])%>
+</p>
