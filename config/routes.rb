@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :items, except: [:destroy]
+    resources :items
     resources :item_versions
+    resources :clients, except: [:destroy]
+    resources :orders, except: [:destroy]
 
     root to: "items#index"
   end
@@ -12,6 +14,6 @@ Rails.application.routes.draw do
   resources :item_versions, only: [:show]
 
   resources :clients, only: [:index, :show] do
-    resources :orders, only: [:index, :show, :new, :create]
+    resources :orders, only: [:index, :new, :create]
   end
 end

@@ -1,8 +1,14 @@
-<h1>Items#index</h1>
+<h1>Items</h1>
+<p>
+<%= link_to "Items", items_path%>
+<%= link_to "Clients", clients_path%>
+<%= link_to "Admin", admin_items_path%>
+</p>
+
 <p>Available items: <%= @items.length %> </p>
 
 <% @items.each do |item| %>
   <p>
-    Item name <%= item.name %> <%= link_to "show", item %> 
+<%= item.name %> <%= link_to "show", item %> 
  </p>
 <% end %>

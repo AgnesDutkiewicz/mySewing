@@ -3,6 +3,6 @@ class ItemVersion < ApplicationRecord
     has_many :order
 
     def list_display_name
-        "#{item.name} size: #{size}"
+        "#{item.name}, size: #{size}, color: #{color}"
     end
 end
