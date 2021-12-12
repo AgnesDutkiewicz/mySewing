@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class ClientDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -12,7 +12,7 @@ class ClientDashboard < Administrate::BaseDashboard
     id: Field::Number,
     client_name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -21,9 +21,9 @@ class ClientDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
 
-  #id
-  #created_at
-    COLLECTION_ATTRIBUTES = %i[
+  # id
+  # created_at
+  COLLECTION_ATTRIBUTES = %i[
     client_name
     orders
   ].freeze

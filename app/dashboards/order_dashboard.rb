@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class OrderDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -13,7 +13,7 @@ class OrderDashboard < Administrate::BaseDashboard
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    item_version_id: Field::Number,
+    item_version_id: Field::Number
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,7 +22,7 @@ class OrderDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   #
-  #id
+  # id
   COLLECTION_ATTRIBUTES = %i[
     client
     item_version
@@ -32,7 +32,7 @@ class OrderDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   #
-  #item_versions
+  # item_versions
   SHOW_PAGE_ATTRIBUTES = %i[
     client
     id

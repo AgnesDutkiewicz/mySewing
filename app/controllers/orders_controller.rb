@@ -12,11 +12,8 @@ class OrdersController < ApplicationController
     client = Client.find(params[:client_id])
     order = client.orders.new
     order.item_version_id = params[:order][:item_version_id]
+    order.save!
 
-    if order.save
-      redirect_to client_orders_path(client)
-    else
-      raise StandardError
-    end
+    redirect_to client_orders_path(client)
   end
 end

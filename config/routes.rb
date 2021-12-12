@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     resources :clients, except: [:destroy]
     resources :orders, except: [:destroy]
 
-    root to: "items#index"
+    root to: 'items#index'
   end
 
-  root 'items#index' 
+  root 'items#index'
 
   resources :items, only: [:index, :show]
   resources :item_versions, only: [:show]
