@@ -2,11 +2,9 @@ module Api
   class ClientsController < ApiController
     def index
       clients = Client.all
-      mapped_clients = clients.map do |client|
-        { id: client.id, client_name: client.client_name }
-      end
+      serializer = ClientSerializer.new
 
-      render json: mapped_clients
+      render json: serializer.serialize(clients)
     end
   end
 end
