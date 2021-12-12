@@ -20,19 +20,20 @@ class ItemDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
+  #
+  #id
+  #created_at
   COLLECTION_ATTRIBUTES = %i[
-    item_versions
-    id
     name
-    created_at
+    item_versions
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    item_versions
-    id
     name
+    id
+    item_versions
     created_at
     updated_at
   ].freeze
@@ -59,7 +60,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how items are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(item)
-  #   "Item ##{item.id}"
-  # end
+  def display_resource(item)
+    "#{item.name}"
+  end
 end

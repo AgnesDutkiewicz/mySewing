@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ItemVersionDashboard < Administrate::BaseDashboard
+class ClientDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,11 +8,9 @@ class ItemVersionDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    item: Field::BelongsTo,
-    order: Field::HasMany,
+    orders: Field::HasMany,
     id: Field::Number,
-    size: Field::String,
-    color: Field::String,
+    client_name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -22,21 +20,20 @@ class ItemVersionDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = %i[
-    item
-    size
-    color
+
+  #id
+  #created_at
+    COLLECTION_ATTRIBUTES = %i[
+    client_name
+    orders
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  # 
-  # Removed `order`
   SHOW_PAGE_ATTRIBUTES = %i[
-    item
+    client_name
     id
-    size
-    color
+    orders
     created_at
     updated_at
   ].freeze
@@ -45,9 +42,8 @@ class ItemVersionDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    item
-    size
-    color
+    client_name
+    orders
   ].freeze
 
   # COLLECTION_FILTERS
@@ -62,10 +58,14 @@ class ItemVersionDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how item versions are displayed
+  # Overwrite this method to customize how clients are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(item_version)
-    "ItemVersion ##{item_version.list_display_name}"
+  # def display_resource(client)
+  #   "Client #{client.list_client}"
+  # end
+
+  def display_resource(client)
+    "Client #{client.client_name}"
   end
 end
