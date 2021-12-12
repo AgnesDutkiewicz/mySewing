@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   resources :clients, only: [:index, :show] do
     resources :orders, only: [:index, :new, :create]
   end
+
+  namespace :api do
+    resources :clients, only: [:index]
+  end
 end
