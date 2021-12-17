@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :clients, only: [:index]
+    resources :items, only: [:index]
   end
 end
