@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   root 'items#index'
 
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index] do
+    resources :item_versions, only: [:index]
+  end
   resources :item_versions, only: [:show]
 
   resources :clients, only: [:index, :show] do

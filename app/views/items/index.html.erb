@@ -9,6 +9,6 @@
 
 <% @items.each do |item| %>
   <p>
-<%= item.name %> <%= link_to "show", item %> 
+<%= item.name %> <%= link_to "show", item_item_versions_path(item_id: item.id) %>
  </p>
 <% end %>

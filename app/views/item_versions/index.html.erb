@@ -1,0 +1,10 @@
+<h1>Available models: <%= @item_versions.count %> </h1>
+
+<% @item_versions.each do |item_version| %>
+  <p>
+    <%= item_version.list_display_name %> <%= link_to "item", item_version_path(id: item_version.id) %>
+  </p>
+<% end %>
+<p>
+  <%= link_to "Back", items_path %>
+</p>

@@ -1,4 +1,4 @@
-<h1>Item with name <%= @item_version.item.name %></h1>
+<h1>Item: <%= @item_version.item.name %></h1>
 
 <p>
   Size: <%= @item_version.size %>
@@ -8,4 +8,4 @@
   Color: <%= @item_version.color %>
 </p>
 
-<%= link_to "Back", @item_version.item %>
+<%= link_to "Back", item_item_versions_path(item_id: @item_version.item.id) %>
