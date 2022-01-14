@@ -11,6 +11,9 @@ class OrderDashboard < Administrate::BaseDashboard
     client: Field::BelongsTo,
     item_version: Field::BelongsTo,
     id: Field::Number,
+    amount: Field::Number.with_options(
+      decimals: 2
+    ),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     item_version_id: Field::Number
@@ -21,22 +24,21 @@ class OrderDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  #
-  # id
+
   COLLECTION_ATTRIBUTES = %i[
     client
     item_version
+    amount
     created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  #
-  # item_versions
+
   SHOW_PAGE_ATTRIBUTES = %i[
     client
     id
-    item_version_id
+    item_version
     created_at
     updated_at
   ].freeze
@@ -47,6 +49,7 @@ class OrderDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     client
     item_version
+    amount
   ].freeze
 
   # COLLECTION_FILTERS
