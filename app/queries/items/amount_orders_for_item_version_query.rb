@@ -22,7 +22,7 @@ module Items
     attr_reader :item_version_id
 
     def item_version
-      item_version = ItemVersion.find(item_version_id)
+      ItemVersion.find(item_version_id)
     end
   end
 end

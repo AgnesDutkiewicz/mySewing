@@ -17,7 +17,8 @@ module Items
           # 1st solution
           result = result.uniq
           # 2nd solution
-          # result
+          # replace result = [] with result = Set.new
+          # with a set we don't need result = result.uniq
         end
       end
       # Find in documentation how to delete duplicates. At least 2 solutions.
