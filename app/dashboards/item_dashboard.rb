@@ -11,6 +11,7 @@ class ItemDashboard < Administrate::BaseDashboard
     item_versions: Field::HasMany,
     id: Field::Number,
     name: Field::String,
+    category: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -25,6 +26,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # created_at
   COLLECTION_ATTRIBUTES = %i[
     name
+    category
     item_versions
   ].freeze
 
@@ -33,6 +35,7 @@ class ItemDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     name
     id
+    category
     item_versions
     created_at
     updated_at
@@ -43,6 +46,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
+    category
   ].freeze
 
   # COLLECTION_FILTERS

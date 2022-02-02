@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :clients, only: [:index]
+    resources :categories
     resources :items, only: [:index] do
       resources :versions, controller: 'item_versions', only: [:index]
     end
