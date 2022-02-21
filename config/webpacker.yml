@@ -82,11 +82,6 @@ test:
 production:
   <<: *default
 
-    # dev_server does not probably fit production, but it's a starting point
-    dev_server:
-      headers:
-        'Access-Control-Allow-Origin': '*'
-
   # Production depends on precompilation of packs prior to booting for performance.
   compile: false
 
