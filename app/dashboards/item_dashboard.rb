@@ -11,6 +11,7 @@ class ItemDashboard < Administrate::BaseDashboard
     item_versions: Field::HasMany,
     id: Field::Number,
     name: Field::String,
+    subname: Field::Text,
     category: Field::String,
     discription: Field::Text,
     size: Field::String,
@@ -27,6 +28,7 @@ class ItemDashboard < Administrate::BaseDashboard
 
   COLLECTION_ATTRIBUTES = %i[
     name
+    subname
     category
     discription
     size
@@ -38,6 +40,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     name
+    subname
     id
     category
     item_versions
@@ -53,6 +56,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
+    subname
     category
     discription
     size

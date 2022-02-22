@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2022_02_22_102653) do
     t.text "discription"
     t.string "size"
     t.string "fabrics"
-    t.string "subname"
+    t.text "subname"
   end
 
   create_table "orders", force: :cascade do |t|
