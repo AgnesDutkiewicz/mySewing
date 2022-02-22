@@ -12,6 +12,9 @@ class ItemDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     category: Field::String,
+    discription: Field::Text,
+    size: Field::String,
+    fabrics: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -21,12 +24,13 @@ class ItemDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  #
-  # id
-  # created_at
+
   COLLECTION_ATTRIBUTES = %i[
     name
     category
+    discription
+    size
+    fabrics
     item_versions
   ].freeze
 
@@ -37,6 +41,9 @@ class ItemDashboard < Administrate::BaseDashboard
     id
     category
     item_versions
+    discription
+    size
+    fabrics
     created_at
     updated_at
   ].freeze
@@ -47,6 +54,9 @@ class ItemDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     category
+    discription
+    size
+    fabrics
   ].freeze
 
   # COLLECTION_FILTERS

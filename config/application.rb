@@ -32,6 +32,7 @@ module MySewing
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # Fix CORS error
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
