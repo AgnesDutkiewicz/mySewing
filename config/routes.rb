@@ -20,10 +20,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
   end
 
-    # get 'categories/:category/items' => 'categories#index'
-  # namespace :categories do
-  #     resources :items, only: [:index], module: :categories
-  #   end
 
   namespace :api do
     resources :categories, only: nil do
@@ -31,6 +27,7 @@ Rails.application.routes.draw do
     end
     resources :clients, only: [:index]
     resources :categories
+    get 'items/:id' => 'items#index'
     resources :items, only: [:index] do
       resources :versions, controller: 'item_versions', only: [:index]
     end
