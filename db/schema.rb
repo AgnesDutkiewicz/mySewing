@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_02_22_102653) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
-    t.text "discription"
+    t.text "description"
     t.string "size"
     t.string "fabrics"
     t.text "subname"
