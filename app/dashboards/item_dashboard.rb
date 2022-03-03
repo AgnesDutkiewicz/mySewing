@@ -13,7 +13,7 @@ class ItemDashboard < Administrate::BaseDashboard
     name: Field::String,
     subname: Field::Text,
     category: Field::String,
-    discription: Field::Text,
+    description: Field::Text,
     size: Field::String,
     fabrics: Field::String,
     created_at: Field::DateTime,
@@ -30,7 +30,7 @@ class ItemDashboard < Administrate::BaseDashboard
     name
     subname
     category
-    discription
+    description
     size
     fabrics
     item_versions
@@ -44,7 +44,7 @@ class ItemDashboard < Administrate::BaseDashboard
     id
     category
     item_versions
-    discription
+    description
     size
     fabrics
     created_at
@@ -58,7 +58,7 @@ class ItemDashboard < Administrate::BaseDashboard
     name
     subname
     category
-    discription
+    description
     size
     fabrics
   ].freeze
