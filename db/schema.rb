@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_100627) do
     t.text "description"
     t.string "category"
     t.string "grammage"
-    t.string "recommended"
+    t.text "recommended"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

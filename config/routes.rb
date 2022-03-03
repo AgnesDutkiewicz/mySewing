@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :items
     resources :item_versions
+    resources :fabrics
     resources :clients, except: [:destroy]
     resources :orders, except: [:destroy]
 
@@ -20,10 +21,12 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
   end
 
+  resources :fabrics, only: [:index, :show]
 
   namespace :api do
     resources :categories, only: nil do
       resources :items, only: [:index], module: :categories
+      resources :fabrics, only: [:index], module: :categories
     end
     resources :clients, only: [:index]
     resources :categories
