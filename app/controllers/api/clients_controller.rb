@@ -2,9 +2,11 @@ module Api
   class ClientsController < ApiController
     def index
       clients = Client.all
-      serializer = ClientSerializer.new
+      render json: clients.to_json(only: [:id, :client_name])
 
-      render json: serializer.serialize(clients)
+      # serializer = ClientSerializer.new
+      #
+      # render json: serializer.serialize(clients)
     end
   end
 end
