@@ -34,8 +34,8 @@ Rails.application.routes.draw do
 
     resources :clients, only: [:index]
     resources :categories
-    get 'items/:id' => 'items#index'
-    resources :items, only: [:index] do
+    resources :fabrics
+    resources :items, only: [:index, :show] do
       resources :versions, controller: 'item_versions', only: [:index]
     end
   end
