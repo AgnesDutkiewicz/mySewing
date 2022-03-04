@@ -1,0 +1,8 @@
+<h1>Fabrics</h1>
+<p>Number of fabrics: <%= @fabrics.count %></p>
+
+<% @fabrics.each do |fabric| %>
+  <p>
+    <%= link_to fabric.name, fabric %>
+  </p>
+<% end %>

@@ -26,8 +26,12 @@ Rails.application.routes.draw do
   namespace :api do
     resources :categories, only: nil do
       resources :items, only: [:index], module: :categories
-      resources :fabrics, only: [:index], module: :categories
     end
+
+    resources :types, only: nil do
+      resources :fabrics, only: [:index], module: :types
+    end
+
     resources :clients, only: [:index]
     resources :categories
     get 'items/:id' => 'items#index'
