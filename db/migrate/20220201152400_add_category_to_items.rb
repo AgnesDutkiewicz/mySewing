@@ -3,4 +3,3 @@ class AddCategoryToItems < ActiveRecord::Migration[6.1]
     add_column :items, :category, :string
   end
 end
-

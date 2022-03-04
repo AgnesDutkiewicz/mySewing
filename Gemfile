@@ -22,15 +22,15 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'administrate'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rubocop'
-gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem 'dotenv-rails'
 end
 
 group :development do

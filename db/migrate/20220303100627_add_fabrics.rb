@@ -8,6 +8,6 @@ class AddFabrics < ActiveRecord::Migration[6.1]
       t.text :recommended
 
       t.timestamps
-      end
+    end
   end
 end
