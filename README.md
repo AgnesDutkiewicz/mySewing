@@ -1,5 +1,6 @@
 # README
-# mySewing - shop app
+
+## mySewing - shop app
 
 ## General info
 Simple shop app for creating orders (without payment) created with Ruby on Rails.
