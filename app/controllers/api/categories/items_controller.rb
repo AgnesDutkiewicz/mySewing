@@ -2,10 +2,10 @@ module Api
   module Categories
     class ItemsController < ApiController
       def index
-        # chosen_item = Item.where(category: params[:category_id]) works aswell
         chosen_items = Item.all.select { |i| i.category.downcase == params[:category_id] }
+        serializer = ApiCategoriesSerializer.new
 
-        render json: chosen_items.to_json(only: [:id, :name, :category, :subname])
+        render json: serializer.serialize(chosen_items)
       end
     end
   end
