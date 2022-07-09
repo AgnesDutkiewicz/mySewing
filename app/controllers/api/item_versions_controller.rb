@@ -1,9 +1,10 @@
 module Api
   class ItemVersionsController < ApiController
     def index
-      versions = ItemVersion.where(item_id: params[:item_id])
+      item_versions = Item.find(params[:item_id]).item_versions
+      serializer = ItemVersionSerializer.new
 
-      render json: versions.to_json
+      render json: serializer.serialize(item_versions)
     end
   end
 end

@@ -1,13 +1,14 @@
 # README
-# mySewing - shop app
+
+## mySewing - shop app
 
 ## General info
 Simple shop app for creating orders (without payment) created with Ruby on Rails.
 App was created to present sewn products and create orders for specific product.
 
 ## Technologies
-Ruby 2.7.4
-Rails 6.1.5
+* Ruby 2.7.4
+* Rails 6.1.5
 
 ### Features
 * list items and item_versions for items (with size and color)
