@@ -11,8 +11,9 @@ Rails 6.1.5
 
 ### Features
 * list items and item_versions for items (with size and color)
-* create orders for specific item_version
+* list items and fabrics sorted by its category
 * list all orders in admin dashboard
+* create orders for specific item_version
 
 ### Status
 This app is finished by now. In the near future I plan to upgrade it by:
