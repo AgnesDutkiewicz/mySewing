@@ -1,16 +1,13 @@
 RSpec.describe Api::ItemsController, type: :request do
-  describe '#index' do
-    subject(:fetch) { get '/api/items' }
-
+  describe '#show' do
+    subject(:fetch) { get "/api/items/#{dress.id}" }
     let!(:dress) { Item.create!(name: 'dress') }
-    let!(:socks) { Item.create!(name: 'socks') }
 
-    it 'returns items' do
+    it 'returns item' do
       fetch
 
       expect(JSON.parse(response.body).map(&:symbolize_keys)).to match [
-        match_item(dress),
-        match_item(socks)
+        match_item(dress)
       ]
     end
 
