@@ -1,9 +1,11 @@
 module Api
   class ItemsController < ApiController
     def show
-      chosen_item = Item.all.select { |i| i.id.to_s == params[:id] }
+      item = Item.all.select { |i| i.id.to_s == params[:id] }
+      serializer = ItemSerializer.new
 
-      render json: chosen_item
+      # This should return a single item, but FE expects an array so we can't change it at the moment.
+      render json: serializer.serialize(item)
     end
   end
 end
