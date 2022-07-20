@@ -4,11 +4,9 @@ module Api
       fabrics_with_category = Fabric.where.not(category: nil)
       categories = fabrics_with_category.map { |fabric| fabric.category.downcase.humanize }
       sorted_uniq_categories = categories.uniq.sort
-      serialized_data = sorted_uniq_categories.map do |category_name|
-        { type: category_name }
-      end
+      serializer = TypesSerializer.new
 
-      render json: serialized_data
+      render json: serializer.serialize(sorted_uniq_categories)
     end
   end
 end
